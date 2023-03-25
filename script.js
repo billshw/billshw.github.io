@@ -1,39 +1,31 @@
-const brandsData = [
-    {
-        name: "Brand 1",
-        collections: [
-            {name: "Collection 1", description: "Brief introduction..."},
-            {name: "Collection 2", description: "Brief introduction..."},
-            {name: "Collection 3", description: "Brief introduction..."}
-        ]
-    },
-    // ...add the other 9 brands with their respective collections
+const staff = [
+    'Staff 1',
+    'Staff 2',
+    // ... add all staff names
 ];
 
-const brandsContainer = document.getElementById("brands-container");
+const gifts = [
+    'Gift 1',
+    'Gift 2',
+    // ... add all gift items
+];
 
-brandsData.forEach(brand => {
-    const brandElement = document.createElement("div");
-    brandElement.className = "brand";
+const drawBtn = document.getElementById('draw-btn');
+const result = document.getElementById('result');
+const logs = document.getElementById('logs');
 
-    const brandName = document.createElement("h2");
-    brandName.innerText = brand.name;
-    brandElement.appendChild(brandName);
+function getRandomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
 
-    brand.collections.forEach(collection => {
-        const collectionElement = document.createElement("div");
-        collectionElement.className = "collection";
+drawBtn.addEventListener('click', () => {
+    const luckyStaff = getRandomItem(staff);
+    const luckyGift = getRandomItem(gifts);
 
-        const collectionName = document.createElement("h3");
-        collectionName.innerText = collection.name;
-        collectionElement.appendChild(collectionName);
+    result.innerHTML = `${luckyStaff} wins ${luckyGift}`;
 
-        const collectionDescription = document.createElement("p");
-        collectionDescription.innerText = collection.description;
-        collectionElement.appendChild(collectionDescription);
-
-        brandElement.appendChild(collectionElement);
-    });
-
-    brandsContainer.appendChild(brandElement);
+    const logEntry = document.createElement('div');
+    logEntry.className = 'log-entry';
+    logEntry.innerHTML = `${new Date().toLocaleString()}: ${luckyStaff} won ${luckyGift}`;
+    logs.prepend(logEntry);
 });

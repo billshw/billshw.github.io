@@ -4,25 +4,32 @@ body {
     padding: 0;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 1rem;
 }
 
-.brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+#draw-btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.log-entry {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
     border-bottom: 1px solid #eee;
-}
-
-.brand h2 {
-    margin: 0;
-}
-
-.collection {
-    margin: 1rem 0;
 }
