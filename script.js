@@ -1,12 +1,12 @@
 const staff = [
-    'Staff 1',
-    'Staff 2',
+    'Bill',
+    'SWP',
     // ... add all staff names
 ];
 
 const gifts = [
-    'Gift 1',
-    'Gift 2',
+    'PS5',
+    'BOSE',
     // ... add all gift items
 ];
 
